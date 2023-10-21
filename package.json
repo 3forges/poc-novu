@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "terraform:novu:subscriber:create": "bash ./.ci/novu/subscriber/create.sh",
+    "terraform:novu:notifictation:send": "bash ./.ci/novu/notification/send.sh",
+    "terraform:novu": "bash -c 'pnpm run terraform:novu:subscriber:create'",
     "dev": "vite",
     "build:vanilla:css:watch": "bash -c 'pnpm dlx tailwindcss -i ./src/index.css -o ./dist/output.css --watch'",
     "build:vanilla:css": "bash -c 'pnpm dlx tailwindcss -i ./src/index.css -o ./dist/output.css'",
@@ -11,6 +14,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@novu/notification-center": "^0.20.0",
     "flowbite": "^1.8.1",
     "flowbite-react": "^0.6.4",
     "lucide-preact": "^0.288.0",
@@ -19,10 +23,13 @@
     "react-dom": "npm:@preact/compat@^17.1.2"
   },
   "devDependencies": {
+    "@novu/node": "^0.20.0",
     "@preact/preset-vite": "^2.5.0",
+    "@types/node": "^20.8.7",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
+    "tsx": "^3.14.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }

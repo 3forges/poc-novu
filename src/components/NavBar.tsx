@@ -1,6 +1,7 @@
 'use client';
 
 import { Avatar, Dropdown, Navbar } from 'flowbite-react';
+import NovuBoard from './NovuBoard';
 
 export default function NavbarWithDropdown() {
   return (
@@ -9,6 +10,10 @@ export default function NavbarWithDropdown() {
         <img src={"/src/assets/flowbite.svg"} className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
         <span className="self-center whitespace-nowrap text-l p-3 font-semibold dark:text-white">Flowbite Preact</span>
       </Navbar.Brand>
+      <div className="flex md:order-2 p-3">
+      <NovuBoard/>
+
+      </div>
       <div className="flex md:order-2">
         <Dropdown
           arrowIcon={false}
